@@ -166,7 +166,7 @@ export default class Siema {
     this.enableTransition();
 
     if (this.config.draggable) {
-      this.selector.style.cursor = '-webkit-grab';
+      this.selector.style.cursor = 'grab';
     }
 
     // Create a document fragment to put slides into it
@@ -515,7 +515,7 @@ export default class Siema {
   mouseupHandler(e) {
     e.stopPropagation();
     this.pointerDown = false;
-    this.selector.style.cursor = '-webkit-grab';
+    this.selector.style.cursor = 'grab';
     this.enableTransition();
     if (this.drag.endX) {
       this.updateAfterDrag();
@@ -538,7 +538,7 @@ export default class Siema {
       }
 
       this.drag.endX = e.pageX;
-      this.selector.style.cursor = '-webkit-grabbing';
+      this.selector.style.cursor = 'grabbing';
       this.sliderFrame.style.webkitTransition = `all 0ms ${this.config.easing}`;
       this.sliderFrame.style.transition = `all 0ms ${this.config.easing}`;
 
@@ -557,7 +557,7 @@ export default class Siema {
   mouseleaveHandler(e) {
     if (this.pointerDown) {
       this.pointerDown = false;
-      this.selector.style.cursor = '-webkit-grab';
+      this.selector.style.cursor = 'grab';
       this.drag.endX = e.pageX;
       this.drag.preventClick = false;
       this.enableTransition();
